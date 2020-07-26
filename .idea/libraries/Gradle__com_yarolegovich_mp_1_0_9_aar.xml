@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.yarolegovich:mp:1.0.9@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mp-1.0.9.aar/e6f7c0c6c0df69b8bafb922dfba50c28/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mp-1.0.9.aar/e6f7c0c6c0df69b8bafb922dfba50c28/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.yarolegovich/mp/1.0.9/ebf7ef243fe3f97ba96b54ed4888fb5c576d1db0/mp-1.0.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
