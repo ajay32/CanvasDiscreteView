@@ -27,6 +27,11 @@ public class MyView extends View {
     int buttonGapFromCenter = 70;
     int increaseHeightWithCurve = 12;
 
+    int leftArc1YStartView = 80;
+    int leftArc2YStartView = 50;
+    int letftArcXStartView = 30;
+    int leftArc2StartView = 80;
+
     Context cc;
     public MyView(Context context) {
         super(context);
@@ -84,18 +89,18 @@ public class MyView extends View {
 
         //============== LEFT VIEW ===========================================//
 
-        path.moveTo(( cWidth - cRadius ) -30, ( cHeight - cRadius ) + 10);
-        path.quadTo((cWidth - cRadius ) -80, cHeight, (cWidth - cRadius ) -30,  ( cHeight + cRadius ) - 10);
+        path.moveTo(( cWidth - cRadius ) -letftArcXStartView, ( cHeight - cRadius ) + leftArc1YStartView);
+        path.quadTo((cWidth - cRadius ) -80, cHeight, (cWidth - cRadius ) -letftArcXStartView,  ( cHeight + cRadius ) - leftArc1YStartView);
         // path.close();
 
-        path.moveTo(( cWidth - cRadius ) -80, ( cHeight - cRadius ));
-        path.quadTo((cWidth - cRadius ) -130, cHeight, (cWidth - cRadius ) -80,  ( cHeight + cRadius ));
+        path.moveTo(( cWidth - cRadius ) -leftArc2StartView, ( cHeight - cRadius ) + leftArc2YStartView);
+        path.quadTo((cWidth - cRadius ) -130, cHeight, (cWidth - cRadius ) -80,  ( cHeight + cRadius ) - leftArc2YStartView);
         // path.close();
-        path.moveTo(( cWidth - cRadius ) -80, ( cHeight - cRadius )); //starting of my 2nd view (starting)
-        path.lineTo(( cWidth - cRadius ) -30, ( cHeight - cRadius ) +10);  // ending at first (starting)
+        path.moveTo(( cWidth - cRadius ) -letftArcXStartView, ( cHeight - cRadius ) + leftArc1YStartView); //starting of my ist view (starting)
+        path.lineTo(( cWidth - cRadius ) -leftArc2StartView, ( cHeight - cRadius ) + leftArc2YStartView);  // ending at 2nd (starting)
 
-        path.moveTo((cWidth - cRadius ) -80,  ( cHeight + cRadius ));
-        path.lineTo((cWidth - cRadius ) -30,  ( cHeight + cRadius ) -10);
+        path.moveTo((cWidth - cRadius ) -letftArcXStartView,  ( cHeight + cRadius ) - leftArc1YStartView);
+        path.lineTo((cWidth - cRadius ) -80,  ( cHeight + cRadius ) - leftArc2YStartView);
 
         canvas.drawPath(path, paint);
 
@@ -119,18 +124,18 @@ public class MyView extends View {
 
         // left and right button
         //left box
-        path.moveTo(((cWidth -cRadius) + arc1Padding) + buttonGapFromCenter, (( cHeight + cRadius ) + topViewLeftGap ) + increaseHeightWithCurve );
-        path.lineTo(((cWidth -cRadius) + arc2Padding) + buttonGapFromCenter, ( cHeight + cRadius ) + (topViewLeftGap +arcGap) + increaseHeightWithCurve );
+        path.moveTo(((cWidth -cRadius) + arc1Padding) + buttonGapFromCenter, (( cHeight - cRadius ) - topViewLeftGap ) - increaseHeightWithCurve );
+        path.lineTo(((cWidth -cRadius) + arc2Padding) + buttonGapFromCenter, ( cHeight - cRadius ) - (topViewLeftGap +arcGap) - increaseHeightWithCurve );
 // left triangle button
-        path.lineTo((cWidth -cRadius) + arc1Padding, ( cHeight + cRadius ) + topViewLeftGap + (arcGap/2)); // arc 1 startign point + increase height by half of arc b
-        path.lineTo(((cWidth -cRadius) + arc1Padding) + buttonGapFromCenter, (( cHeight + cRadius ) + topViewLeftGap ) + increaseHeightWithCurve ); // back to arc1 + padding from starting point
+        path.lineTo((cWidth -cRadius) + arc1Padding, ( cHeight - cRadius ) - topViewLeftGap - (arcGap/2));
+        path.lineTo(((cWidth -cRadius) + arc1Padding) + buttonGapFromCenter, (( cHeight - cRadius ) - topViewLeftGap ) - increaseHeightWithCurve );
 
 
         // right
-        path.moveTo((cWidth + cRadius) - arc1Padding - buttonGapFromCenter,  ( cHeight + cRadius ) + topViewLeftGap +  + increaseHeightWithCurve );
-        path.lineTo((cWidth + cRadius) - arc2Padding - buttonGapFromCenter,  ( cHeight + cRadius ) + (topViewLeftGap +arcGap) + + increaseHeightWithCurve);
-        path.lineTo((cWidth + cRadius) - arc1Padding ,  ( cHeight + cRadius ) + topViewLeftGap + (arcGap/2) );
-        path.lineTo((cWidth + cRadius) - arc1Padding - buttonGapFromCenter,  ( cHeight + cRadius ) + topViewLeftGap +  + increaseHeightWithCurve );
+        path.moveTo((cWidth + cRadius) - arc1Padding - buttonGapFromCenter,  ( cHeight - cRadius ) - topViewLeftGap - increaseHeightWithCurve );
+        path.lineTo((cWidth + cRadius) - arc2Padding - buttonGapFromCenter,  ( cHeight - cRadius ) - (topViewLeftGap +arcGap) - increaseHeightWithCurve);
+        path.lineTo((cWidth + cRadius) - arc1Padding ,  ( cHeight - cRadius ) - topViewLeftGap - (arcGap/2) );
+        path.lineTo((cWidth + cRadius) - arc1Padding - buttonGapFromCenter,  ( cHeight - cRadius ) - topViewLeftGap - increaseHeightWithCurve );
 
         canvas.drawPath(path, paint);
 
